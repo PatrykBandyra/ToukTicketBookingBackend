@@ -100,6 +100,7 @@ You can now leave psql - everything works fine.
 
 ## TESTING
 
+- When application is closed, the database is deleted - easy testing, no conflicts
 - Testing of endpoints was done in Jupyter Notebook (testing/touk_test.ipynb) using Python 3 and 'requests' module, so it is really easy to read and work with
 - There is also typical use-case scenario written in Python script (tetsing/touk_test_scenario.py)
 - To test if data in the system is valid (polish characters, surnames with dashes, capitalization), use psql console and for example run following:
