@@ -11,4 +11,9 @@ sudo -H -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres'"  # Ju
 sudo -H -u postgres psql -c "DROP DATABASE IF EXISTS booking"
 sudo -H -u postgres psql -c "CREATE DATABASE booking"
 sudo -H -u postgres psql -c "\l"
+echo "FINISHED POSTGRES SETUP"
+echo "ADDING EXECUTABLE RIGHTS TO NECESSARY SHELL SCRIPTS"
+sudo chmod +x runApp.sh
+sudo chmod +x gradlew
+sudo chmod +x src/main/kotlin/com/example/booking/initDB.sh
 echo "FINISHED"
