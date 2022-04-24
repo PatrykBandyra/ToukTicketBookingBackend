@@ -31,10 +31,12 @@ def make_reservation():
     print('RESERVATION MADE')
     print(json.dumps(r.json(), indent=2))
 
+
 def main():
     get_screenings()
     get_available_seats()
     make_reservation()
+
 
 if __name__ == '__main__':
     main()
