@@ -19,8 +19,9 @@ fun validateSeatsLayout(
         seat.number
     }
 
-    // mark already reserved seats
     val seatArray = array2DofBoolean(maxRow + 1, maxNumber + 1)
+
+    // mark already reserved seats
     seatsNotAvailable.forEach { seat ->
         seatArray[seat.row][seat.number] = true
     }
@@ -36,6 +37,7 @@ fun validateSeatsLayout(
                 return@forEach
             }
         } catch (_: ArrayIndexOutOfBoundsException) {
+            // continue looping
         }
         try {  // right side
             if (!seatArray[seat.row][seat.number + 1] && seatArray[seat.row][seat.number + 2]) {
@@ -43,6 +45,7 @@ fun validateSeatsLayout(
                 return@forEach
             }
         } catch (_: ArrayIndexOutOfBoundsException) {
+            // continue looping
         }
     }
     return isOkay

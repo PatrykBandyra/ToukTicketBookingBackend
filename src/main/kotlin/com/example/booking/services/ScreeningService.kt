@@ -20,7 +20,7 @@ class ScreeningService(private val screeningRepository: ScreeningRepository) {
     }
 
     fun findById(id: Int): Screening? {
-        val screeningOptional = screeningRepository.findById(id)
+        val screeningOptional: Optional<Screening> = screeningRepository.findById(id)
         return if (screeningOptional.isPresent) screeningOptional.get() else null
     }
 

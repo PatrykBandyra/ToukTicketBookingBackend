@@ -21,6 +21,7 @@
 - If you do not pay for reserved tickets in the box office at least 15 minutes before the screening, the reservation expires (the reservation expiration timestamp is stored in database so a worker of box office can see whether the registration is still valid or not)
 - There cannot be a single place left over in a row between two already reserved places - after reservation is made, there cannot be any lone seat left between two reserved seats; at the same time there can be a lone seat at the end of a row (the task does not mention anything about that)
 - Ticket Type (Seat Reserved attribute) is just information for a cinema how many tickets of given type have been reserved for a specific movie screening; just like in real life while making ticket reservation there is no need and possibility to choose a specific ticket type for a specific seat if more than one seat is to be reserved; that's why I don't care about assigning a specific ticket type to a specific seat - it's just for statistics and ability to calculate total reservation cost
+- All rooms in a cinema are in shape of a rectangle (the same number of seats in each row)
 
 #### How to run?
 
@@ -100,4 +101,8 @@ You can now leave psql - everything works fine.
 ## TESTING
 
 - Testing of endpoints was done in Jupyter Notebook (testing/touk_test.ipynb) using Python 3 and 'requests' module, so it is really easy to read and work with
-- There is also typical case scenario written in Python script (tetsing/touk_test_scenario.py)
+- There is also typical use-case scenario written in Python script (tetsing/touk_test_scenario.py)
+- To test if data in the system is valid (polish characters, surnames with dashes, capitalization), use psql console and for example run following:
+  ```sql
+  SELECT * FROM reservation
+  ```
